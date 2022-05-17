@@ -35,7 +35,12 @@ public class River {
 	}
 	
 	public double getFlowAvg() {
-		return flowAvg;
+		double avg = 0.0;
+	    for(Flow flow : this.flows) {
+	     avg+=flow.getFlow();
+	    }
+	    avg=avg/this.flows.size();
+	    return avg;
 	}
 
 	public void setFlowAvg(double flowAvg) {
